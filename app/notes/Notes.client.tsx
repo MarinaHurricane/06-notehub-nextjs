@@ -13,6 +13,7 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { useDebounce, useDebouncedCallback } from "use-debounce";
+import NoteList from "@/components/NoteList/NoteList";
 
 export default function NotesClient() {
     const [page,setPage] = useState(1);
@@ -69,23 +70,7 @@ export default function NotesClient() {
         {isModalOpen && <Modal onClose={handleCloseModal}>
             <NoteForm onClose={handleCloseModal}/>
         </Modal> }
-    <ul className={css.list}>
-      {notes.map((note) => (
-        <li key={note.id} className={css.listItem}>
-          <h2 className={css.title}>{note.title}</h2>
-          <p className={css.content}>{note.content}</p>
-          <div className={css.footer}>
-            <span className={css.tag}>{note.tag}</span>
-            <Link href={`/notes/${note.id}`}>View details</Link>
-
-            <button className={css.button} onClick={() => mutate(note.id)}>
-              Delete
-            </button>
-          </div>
-        </li>
-      ))}
-    </ul>
-  
+        <NoteList notes={notes}/>
     </div>
   );
 }

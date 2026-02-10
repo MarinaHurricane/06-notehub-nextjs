@@ -35,10 +35,6 @@ export const fetchNoteById = async (id: Note["id"], page: number = 1) => {
     headers: {
       Authorization: `Bearer ${myKey}`,
     },
-    params: {
-      page,
-      perPage: 12,
-    },
   });
   return data;
 };
