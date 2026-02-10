@@ -1,7 +1,7 @@
 import css from "./NoteList.module.css";
 import type { Note } from "@/types/note";
-import { deleteNote } from "@/lib/api/deleteNote";
-import { fetchNotes } from "@/lib/api/fetchNotes";
+import { deleteNote } from "@/libwrong/api/deleteNote";
+import { fetchNotes } from "@/libwrong/api/fetchNotes";
 import {
   useMutation,
   QueryClient,
