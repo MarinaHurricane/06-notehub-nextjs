@@ -8,14 +8,18 @@ import css from "./NoteDetails.module.css";
 export default function NoteDetailsClient() {
   const { id } = useParams<{ id: string }>();
 
-  const { data: note, isLoading, isError } = useQuery({
+  const {
+    data: note,
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
     refetchOnMount: false,
   });
 
-  if(isLoading) return <p>Loading, please wait...</p>;
-  if(isError) return <p>Something went wrong.</p>;
+  if (isLoading) return <p>Loading, please wait...</p>;
+  if (isError) return <p>Something went wrong.</p>;
   if (!note) return <p>Something went wrong.</p>;
 
   return (
