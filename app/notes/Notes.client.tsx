@@ -1,11 +1,11 @@
 "use client";
 
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { fetchNotes } from "@/libwrong/api/fetchNotes";
+import { fetchNotes } from "@/lib/api";
 import css from "./notes.module.css";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
-import { deleteNote } from "@/libwrong/api/deleteNote";
+import { deleteNote } from "@/lib/api";
 import { useQueryClient } from "@tanstack/react-query";
 import Pagination from "@/components/Pagination/Pagination";
 import { useState } from "react";
